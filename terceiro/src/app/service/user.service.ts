@@ -8,8 +8,8 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  obterUsuarios() {
-    return this.http.get("https://jsonplaceholder.typicode.com/users");
+  obterTodos(id: number){
+    return this.http.get("https://jsonplaceholder.typicode.com/todos/"+id);
   }
 
 }

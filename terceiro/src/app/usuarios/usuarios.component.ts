@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../service/user.service';
-import { User } from '../model/User';
+import { User } from '../module/usuarioid';
 
 @Component({
   selector: 'app-usuarios',
@@ -9,7 +9,9 @@ import { User } from '../model/User';
 })
 export class UsuariosComponent implements OnInit {
 
-  usuario: User[];
+  usuario: User;
+
+  busca: number;
 
   constructor(private lista: UserService) { }
 
@@ -19,7 +21,7 @@ export class UsuariosComponent implements OnInit {
     }
 
   public obterUsuarios() {
-    this.lista.obterUsuarios().subscribe((resultado: User[]) => {
+    this.lista.obterTodos(this.busca).subscribe((resultado: User) => {
       console.log(resultado);
       this.usuario = resultado;
     });

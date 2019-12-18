@@ -1,0 +1,13 @@
+<div class="row">
+    <input type="number" placeholder="Digite o ID" [(ngModel)]="idBusca">
+    <span *ngIf='msgErro'>{{msgErro}}</span>
+    <button (click)="pesquisar();">Pesquisar</button>
+</div>
+
+<div *ngIf="user != null">
+        <h5>User:</h5>
+        {{user.userId}}<br>
+        {{user.userId.id}}<br>
+        {{user.userId.title}}<br>
+        {{user.userId.completed}}<br>
+</div>
